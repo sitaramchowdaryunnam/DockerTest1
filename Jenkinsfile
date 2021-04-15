@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy to Docker Host') {
           steps {
             sh    'docker -H tcp://10.1.2.200:2375 stop feauterwebapp3 || true'
-            sh    'docker -H tcp://10.1.2.200:2375 run --rm -dit --name feauterwebapp3 --hostname feauterwebapp3 -p 11000:80 riderd758/feauterwebapp2:${BUILD_NUMBER}'
+            sh    'docker -H tcp://10.1.2.200:2375 run --rm -dit --name feauterwebapp3 --hostname feauterwebapp3 -p 11000:80 riderd758/feauterwebapp3:${BUILD_NUMBER}'
             }
         }
 
